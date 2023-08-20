@@ -1,0 +1,130 @@
+.about-project__cards {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 40px;
+    margin: 70px 0 110px;
+    padding: 0;
+}
+
+.about-project__card {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    color: #FFF;
+    /*max-width: 550px;*/
+}
+
+.about-project__card-title {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.04em;
+}
+
+.about-project__card-description {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.about-project__timeline {
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: 20% 80%;
+    align-content: center;
+    justify-items: center;
+    row-gap: 14px;
+}
+
+.about-project__duration {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 9px 0;
+}
+
+.about-project__duration_backend {
+    background-color: #2BE080;
+    color: #000;
+}
+
+.about-project__duration_frontend {
+    background-color: #303030;
+    color: #FFF;
+}
+
+.about-project__part-name {
+    color: #8B8B8B;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0;
+}
+
+@media screen and (max-width: 984px) {
+    .about-project__cards {
+        column-gap: 30px;
+        margin-bottom: 93px;
+    }
+
+    .about-project__card {
+        gap: 22px;
+    }
+
+    .about-project__card-description {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .about-project__part-name {
+        font-weight: 400;
+        color: #A0A0A0;
+    }
+}
+
+@media screen and (max-width: 568px) {
+    .about-project__cards {
+        flex-direction: column;
+        gap: 56px;
+        margin: 60px auto;
+    }
+
+    .about-project__card {
+        gap: 1px;
+    }
+
+    .about-project__card-title {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 16px;
+        letter-spacing: -0.04em;
+    }
+
+    .about-project__card-description {
+        font-size: 11px;
+        line-height: 16px;
+    }
+
+    .about-project__timeline {
+        grid-template-columns: 35% 65%;
+        row-gap: 10px;
+    }
+
+    .about-project__duration {
+        font-size: 11px;
+        line-height: 13px;
+        padding: 11px 0;
+    }
+
+    .about-project__part-name {
+        font-size: 11px;
+        line-height: 13px;
+    }
+}

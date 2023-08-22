@@ -1,7 +1,7 @@
 .about-project__cards {
     display: flex;
     justify-content: space-between;
-    column-gap: 40px;
+    column-gap: 50px;
     margin: 70px 0 110px;
     padding: 0;
 }
@@ -103,7 +103,7 @@
     .about-project__card-title {
         font-size: 18px;
         line-height: 22px;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         letter-spacing: -0.04em;
     }
 

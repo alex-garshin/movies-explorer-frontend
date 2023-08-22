@@ -80,8 +80,8 @@
 
 .navigation__link-profile {
     font-weight: 500;
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 13px;
+    line-height: 12px;
     color: #FFF;
     cursor: pointer;
 }
@@ -92,11 +92,11 @@
     background-size: 11px;
     background-position: center;
     background-color: #313131;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     box-sizing: border-box;
     border: none;
-    border-radius: 6px;
+    border-radius: 13px;
     cursor: pointer;
     padding: 0;
     margin: 0;

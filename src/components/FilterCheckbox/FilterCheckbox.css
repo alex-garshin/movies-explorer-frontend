@@ -1,5 +1,5 @@
 .filter__checkbox {
-  margin-top: 32px;
+  margin-top: 40px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -62,7 +62,7 @@
 @media screen and (max-width: 768px) {
   .filter__checkbox {
     justify-content: flex-end;
-    margin-top: 28px;
+    margin-top: 32px;
     gap: 12px;
   }
 }

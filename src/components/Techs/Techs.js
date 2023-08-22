@@ -7,6 +7,7 @@ const Techs = () => {
 
   return (
     <section className="section__block section__block_type_techs">
+      <div className="section__block-content">
       <h2 className="section__title section__title_type_techs">Технологии</h2>
       <h3 className="techs__title">7 технологий</h3>
       <p className="techs__description">
@@ -20,6 +21,8 @@ const Techs = () => {
           </li>
         ))}
       </ul>
+      </div>
+
     </section>
   );
 };

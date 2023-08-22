@@ -1,4 +1,7 @@
 .search__container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
   align-items: center;
   gap: 41px;
   padding-bottom: 48px;

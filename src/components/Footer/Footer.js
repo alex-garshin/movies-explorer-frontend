@@ -17,6 +17,7 @@ const Footer = () => {
 
     return (
         <footer className='footer'>
+            <div className='footer__content'>
             <h2 className='footer__title'>Учебный проект Яндекс.Практикум х BeatFilm.</h2>
             <div className='footer__wrapper'>
                 <p className='footer__copyright'>&copy;&nbsp;{currentYear <= 2023 ? '2023' : `${currentYear}`}{' '}
@@ -33,6 +34,8 @@ const Footer = () => {
                     ))}
                 </ul>
             </div>
+            </div>
+            
 
         </footer>
     )

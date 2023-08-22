@@ -5,18 +5,21 @@
   justify-content: center;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 32px 20px;
+  row-gap: 35px;
   max-width: 1140px;
   padding: 0;
   margin: 0 auto;
 }
 
 .movies__container {
+  width: 100%;
+  max-width: 1140px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 80px;
-  margin: 0;
+  gap: 82px;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -47,12 +50,12 @@
 @media screen and (max-width: 984px) {
   .movies__cards {
     grid-template-columns: repeat(auto-fill, minmax(271px, 339px));
-    row-gap: 34px;
+    row-gap: 40px;
     column-gap: 26px;
   }
 
   .movies__container {
-    gap: 85px;
+    gap: 82px;
   }
 }
 

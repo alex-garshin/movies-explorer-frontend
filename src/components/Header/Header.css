@@ -1,6 +1,6 @@
 .header {
     height: 74px;
-    padding: 0 70px;
+    padding: 0 0px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,15 +59,35 @@
     opacity: .6;
 }
 
+.header__content{
+    display: flex;
+    justify-content: inherit;
+    padding-left: 70px;
+    padding-right: 70px;
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
 @media screen and (max-width: 984px) {
     .header {
-        padding: 0 30px;
+        padding: 0 0px;
+    }
+
+    .header__content{
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
 
 @media screen and (max-width: 568px) {
     .header {
-        padding: 0 14px;
+        padding: 0 0px;
+    }
+
+    .header__content{
+        padding-left: 14px;
+        padding-right: 14px;
     }
 
     .header__button-login {

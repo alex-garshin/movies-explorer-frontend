@@ -1,5 +1,4 @@
 .promo {
-  /* height: 77vh; */
   background-color: #073042;
   box-sizing: border-box;
   margin-top: -74px;
@@ -86,7 +85,7 @@
 
 @media screen and (max-width: 984px) {
   .promo {
-    height: 110vh;
+    /* height: 110vh; */
   }
 
   .promo__container {
@@ -130,7 +129,7 @@
   .promo {
     padding-left: 10px;
     padding-right: 10px;
-    height: 85vh;
+    /* height: 85vh; */
   }
   .promo__container {
     padding: 70px 0px 30px;

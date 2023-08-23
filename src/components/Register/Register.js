@@ -36,12 +36,12 @@ const Register = ({ onRegister }) => {
         <div className="register__container">
           <div className="register__wrapper">
             <div className="register__header">
-              <img
+            <a href="/"><img
                 className="link register__logo"
                 src={logo}
                 alt="Логотип в форме кольца"
                 onClick={navigateHome}
-              />
+              /></a>
             </div>
             <h1 className="register__title">Добро пожаловать!</h1>
 

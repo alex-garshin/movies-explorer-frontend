@@ -169,7 +169,7 @@
 
     .profile__bottom {
         width: calc(100% - 40px);
-        margin-top: auto;
+        margin-top: 378px;
         font-size: 12px;
         line-height: 15px;
     }

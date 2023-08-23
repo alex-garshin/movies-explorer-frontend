@@ -153,7 +153,7 @@
 
   .section__block_type_profile {
     padding: 70px 10px 40px;
-    height: 70vh;
+    /* height: 70vh; */
   }
 
   .section__block_type_register {

@@ -1,0 +1,130 @@
+.card {
+  background-color: #222222;
+  border-radius: 10px;
+  width: inherit;
+  box-sizing: border-box;
+}
+
+.card__image {
+  border-radius: 10px 10px 0 0;
+  object-fit: cover;
+  background-position: center;
+  width: 100%;
+  min-height: 151px;
+  transition: all 0.2s ease-in-out;
+}
+
+.card__image:active {
+  transform: scale(0.9);
+}
+
+.card__wrapper {
+  padding-left: 12px;
+  max-height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 10px;
+  position: relative;
+}
+
+.card__name {
+  width: calc(100% - 34px);
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #fff;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.card__duration {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 14px;
+  color: #8b8b8b;
+  padding: 0;
+  margin: 0;
+  margin-left: 12px;
+  margin-bottom: 10px;
+}
+
+.card__like {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  background-color: #313131;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  padding: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 0;
+  transition: all 0.3s ease-in;
+}
+
+.card__like:hover {
+  opacity: 0.8;
+}
+
+.card__like:active {
+  transform: scale(0.8);
+}
+
+.card__del-button {
+  margin-right: 12px;
+  background-image: url("../../images/del-card.svg");
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: center 55%;
+  background-color: #222222;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.3s ease-in;
+}
+
+.card__del-button:active {
+  transform: scale(0.8);
+}
+
+@media screen and (max-width: 984px) {
+  .card__image {
+    max-height: 190px;
+  }
+  .card__del-button {
+    background-size: 8px;
+    margin-right: 8px;
+    margin-top: -9px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .card__image {
+    min-height: 168px;
+  }
+
+  .card__name {
+    font-size: 12px;
+    line-height: 15px;
+    word-wrap: normal;
+  }
+
+  .card__duration {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .card__del-button {
+    visibility: visible;
+  }
+}

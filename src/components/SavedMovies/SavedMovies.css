@@ -1,0 +1,22 @@
+@import url(../Movies/Movies.css);
+
+.card__del {
+  background-image: url("../../images/del-card.svg");
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: center 55%;
+  background-color: #313131;
+  width: 24px;
+  height: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.card__del_active {
+  background-image: url("../../images/save-card-active.svg");
+}

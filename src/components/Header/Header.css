@@ -1,105 +1,105 @@
 .header {
-    height: 74px;
-    padding: 0 0px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: none;
-    z-index: 1;
+  height: 74px;
+  padding: 0 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  z-index: 1;
 }
 
 .header__logo {
-    width: 38px;
-    height: 38px;
-    cursor: pointer;
-    transition: all .3s ease-in;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
 }
 
 .header__logo:hover {
-    transform: scale(1.2);
-    opacity: .6;
+  transform: scale(1.2);
+  opacity: 0.6;
 }
 
 .header__logo:active {
-    transform: scale(0.8);
+  transform: scale(0.8);
 }
 
 .header__right-menu {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .header__link {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    color: #FFF;
-    cursor: pointer;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  cursor: pointer;
 }
 
 .header__button-login {
-    padding: 8px 20px;
-    background-color: #3DDC84;
-    text-decoration: none;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    border-radius: 3px;
-    border: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    transition: transform .3s linear, opacity .3s linear;
+  padding: 8px 20px;
+  background-color: #3ddc84;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: transform 0.3s linear, opacity 0.3s linear;
 }
 
 .header__button-login:hover {
-    transform: scale(1.1);
-    opacity: .6;
+  transform: scale(1.1);
+  opacity: 0.6;
 }
 
-.header__content{
-    display: flex;
-    justify-content: inherit;
-    padding-left: 70px;
-    padding-right: 70px;
-    width: 100%;
-    max-width: 1140px;
-    margin: 0 auto;
+.header__content {
+  display: flex;
+  justify-content: inherit;
+  padding-left: 70px;
+  padding-right: 70px;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 984px) {
-    .header {
-        padding: 0 0px;
-    }
+  .header {
+    padding: 0 0px;
+  }
 
-    .header__content{
-        padding-left: 30px;
-        padding-right: 30px;
-    }
+  .header__content {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
 
 @media screen and (max-width: 568px) {
-    .header {
-        padding: 0 0px;
-    }
+  .header {
+    padding: 0 0px;
+  }
 
-    .header__content{
-        padding-left: 14px;
-        padding-right: 14px;
-    }
+  .header__content {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 
-    .header__button-login {
-        padding: 5px 12px;
-        font-size: 10px;
-    }
+  .header__button-login {
+    padding: 5px 12px;
+    font-size: 10px;
+  }
 
-    .header__right-menu {
-        gap: 14px;
-    }
+  .header__right-menu {
+    gap: 14px;
+  }
 
-    .header__link {
-        font-size: 10px;
-    }
+  .header__link {
+    font-size: 10px;
+  }
 }

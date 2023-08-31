@@ -1,20 +1,21 @@
-import React from 'react';
+import React from "react";
 
-import './FilterCheckbox.css';
+import "./FilterCheckbox.css";
 
-const FilterCheckbox = () => {
-    return (
-        <label className='filter__checkbox'>
-            
-            <input
-                type='checkbox'
-                className='filter__checkbox-default'
-            />
-            <span className='filter__checkbox-button'/>
-            <span className='filter__checkbox-name'>Короткометражки</span>
-        </label>
-    );
-}
+const FilterCheckbox = ({ checked, handleSwitcherChange }) => {
+  return (
+    <label className="filter__checkbox">
+      <input
+        type="checkbox"
+        className="filter__checkbox-default"
+        value={checked}
+        checked={checked}
+        onChange={handleSwitcherChange}
+      />
+      <span className="filter__checkbox-button" />
+      <span className="filter__checkbox-name">Короткометражки</span>
+    </label>
+  );
+};
 
 export default FilterCheckbox;
-

@@ -18,6 +18,7 @@ import {
     deleteMoviesError,
     saveMoviesError,
     nothingSearched,
+    MAX_DURATION_SHORT_MOVIE,
 } from '../../utils/constants';
 import getRenderMoviesCount from '../../utils/getRenderMoviesCount';
 
@@ -25,13 +26,13 @@ const Movies = ({ isLoggedIn, openPopup }) => {
     const [movies, setMovies] = useState([]);
     const [moviesSaved, setMoviesSaved] = useState([]);
     const [moviesShowed, setMoviesShowed] = useState([]);
-    const [moviesWithSwitcher, setMoviesWithSwitcher] = useState([]);
-    const [moviesShowedWithSwitcher, setMoviesShowedWithSwitcher] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [moviesCount, setMoviesCount] = useState([]);
     const [moviesSwitcher, setMoviesSwitcher] = useState(false);
     const [moviesSearchValues, setMoviesSearchValues] = useState('');
-    const [isGetMoviesFirst, setIsGetMoviesFirst] = useState(true)
+    const [shortMovies, setShortMovies] = useState([]);
+    const [isGetMoviesFirst, setIsGetMoviesFirst] = useState(true);
+    const [switcher, setSwitcher] = useState(false);
 
     useEffect(() => {
         setMoviesCount(getRenderMoviesCount());
@@ -66,10 +67,16 @@ const Movies = ({ isLoggedIn, openPopup }) => {
             openPopup(nothingSearched);
         }
         setMoviesShowed(spliceData);
+        getShortMovies(spliceData)
         setMovies(filterDataWithLiked);
-        setMoviesShowedWithSwitcher(spliceData);
-        setMoviesWithSwitcher(filterDataWithLiked);
     }
+
+    function getShortMovies(movies) {
+        const shortMoviesList = movies.filter(movie => movie.duration <= MAX_DURATION_SHORT_MOVIE);
+        setShortMovies(shortMoviesList)
+    }
+
+    console.log(shortMovies)
 
     async function handleGetMoviesFirst(searchValues) {
         setMoviesSwitcher(false);
@@ -89,6 +96,7 @@ const Movies = ({ isLoggedIn, openPopup }) => {
         } catch (err) {
             openPopup(downloadMoviesError);
             setMovies([]);
+            setShortMovies([]);
             removeFromLocalStorage('movies');
             removeFromLocalStorage('moviesSwitcher');
             removeFromLocalStorage('moviesSearchValues');
@@ -98,8 +106,6 @@ const Movies = ({ isLoggedIn, openPopup }) => {
     }
 
     function handleGetMovies(searchValues) {
-        setMoviesSwitcher(false);
-        addToLocalStorage('moviesSwitcher', null);
 
         if (!searchValues) {
             openPopup(searchMoviesError);
@@ -166,9 +172,9 @@ const Movies = ({ isLoggedIn, openPopup }) => {
                 });
 
             const localStorageMovies = getFromLocalStorage('movies');
-
             if (localStorageMovies) {
                 const filterData = JSON.parse(localStorageMovies);
+                    getShortMovies(filterData);
                 setMoviesShowed(filterData.splice(0, getRenderMoviesCount()[0]));
                 setMovies(filterData);
                 setIsLoading(false);
@@ -197,16 +203,10 @@ const Movies = ({ isLoggedIn, openPopup }) => {
                 <SearchForm handleGetMovies={isGetMoviesFirst ? handleGetMoviesFirst : handleGetMovies}
                             moviesSwitcher={moviesSwitcher}
                             moviesSearchValues={moviesSearchValues}
-                            moviesWithSwitcher={moviesWithSwitcher}
-                            setMoviesWithSwitcher={setMoviesWithSwitcher}
-                            moviesShowedWithSwitcher={moviesShowedWithSwitcher}
-                            setMoviesShowedWithSwitcher={setMoviesShowedWithSwitcher}
-                            movies={movies}
-                            setMovies={setMovies}
-                            moviesShowed={moviesShowed}
-                            setMoviesShowed={setMoviesShowed}
+                            setSwitcher={setSwitcher}
+                            switcher={switcher}
                 />
-                {isLoading ? <Preloader/> : <MoviesCardList movies={moviesShowed}
+                {isLoading ? <Preloader/> : <MoviesCardList movies={switcher ? shortMovies :moviesShowed}
                                                             savedMovies={moviesSaved}
                                                             onSaveMovie={handleSaveClick}
                                                             restOfMovieList={movies}

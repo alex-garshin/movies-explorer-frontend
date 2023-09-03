@@ -1,59 +1,18 @@
 import React, { useState, useEffect } from "react";
 import search from "../../images/text__COLOR_invisible.svg";
-import { useLocation } from "react-router-dom";
 
 import "./SearchForm.css";
 
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
-import { MAX_DURATION_SHORT_MOVIE } from "../../utils/constants";
-import { addToLocalStorage } from "../../utils/utils";
 
 const SearchForm = ({
   handleGetMovies,
   moviesSwitcher,
   moviesSearchValues,
-  setMoviesShowedWithSwitcher,
-  setMoviesWithSwitcher,
-  moviesShowed,
-  movies,
-  moviesShowedWithSwitcher,
-  moviesWithSwitcher,
-  setMoviesShowed,
-  setMovies,
+  setSwitcher,
+  switcher
 }) => {
   const [inputSearch, setInputSearch] = useState("");
-  const [switcher, setSwitcher] = useState(false);
-  const location = useLocation();
-
-  async function handleGetShorties(switcher) {
-    let filterDataShowed = [];
-    let filterData = [];
-
-    if (switcher) {
-      setMoviesShowedWithSwitcher(moviesShowed);
-      setMoviesWithSwitcher(movies);
-      filterDataShowed = moviesShowed.filter(
-        ({ duration }) => duration <= MAX_DURATION_SHORT_MOVIE
-      );
-      filterData = movies.filter(
-        ({ duration }) => duration <= MAX_DURATION_SHORT_MOVIE
-      );
-    } else {
-      filterDataShowed = moviesShowedWithSwitcher;
-      filterData = moviesWithSwitcher;
-    }
-
-    if (location.pathname === "/movies") {
-      addToLocalStorage(
-        "movies",
-        JSON.stringify(filterDataShowed.concat(filterData))
-      );
-      addToLocalStorage("moviesSwitcher", switcher);
-    }
-
-    setMoviesShowed(filterDataShowed);
-    setMovies(filterData);
-  }
 
   function handleInputChange(e) {
     setInputSearch(e.target.value);
@@ -62,7 +21,6 @@ const SearchForm = ({
   function handleSwitcherChange() {
     const switcherOn = !switcher;
     setSwitcher(switcherOn);
-    handleGetShorties(switcherOn);
   }
 
   function handleSubmit(evt) {

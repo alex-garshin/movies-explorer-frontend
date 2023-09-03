@@ -21,13 +21,14 @@ const Header = ({ isLoginPanelVisible, children }) => {
   return (
     <header className="header page__header" id="header">
       <div className="header__content">
-      <a href="/"><img
-          className="header__logo"
-          src={headerLogo}
-          alt="Логотип в форме кольца"
-          onClick={navigateHome}
-        /></a>
-      
+        <a href="/">
+          <img
+            className="header__logo"
+            src={headerLogo}
+            alt="Логотип в форме кольца"
+            onClick={navigateHome}
+          />
+        </a>
         {children}
         {isLoginPanelVisible && (
           <nav className="header__right-menu">
@@ -38,9 +39,8 @@ const Header = ({ isLoginPanelVisible, children }) => {
               Войти
             </button>
           </nav>
-        )}
+        )}{" "}
       </div>
-        
     </header>
   );
 };

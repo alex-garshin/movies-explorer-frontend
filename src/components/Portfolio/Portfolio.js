@@ -3,20 +3,20 @@ import React from "react";
 import "./Portfolio.css";
 
 const Portfolio = () => {
-  const projects = [
-    {
-      title: "Статичный сайт",
-      ref: "https://alex-garshin.github.io/how-to-learn/",
-    },
-    {
-      title: "Адаптивный сайт",
-      ref: "https://alex-garshin.github.io/russian-travel/",
-    },
-    {
-      title: "Одностраничное приложение",
-      ref: "https://alex-garshin.github.io/",
-    },
-  ];
+    const projects = [
+      {
+        title: "Статичный сайт",
+        ref: "https://alex-garshin.github.io/how-to-learn/",
+      },
+      {
+        title: "Адаптивный сайт",
+        ref: "https://alex-garshin.github.io/russian-travel/",
+      },
+      {
+        title: "Одностраничное приложение",
+        ref: "https://alex-garshin.github.io/",
+      },
+    ];
 
   return (
     <section className="section__block section__block_type_portfolio">

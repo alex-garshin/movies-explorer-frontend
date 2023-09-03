@@ -8,7 +8,7 @@ const AboutProject = () => {
       className="section__block section__block_type_about-project"
       id="about-project"
     >
-      <div className='section__block-content'>
+      <div className="section__block-content">
         <h2 className="section__title section__title_type_about-project">
           О проекте
         </h2>

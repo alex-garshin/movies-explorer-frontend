@@ -5,26 +5,24 @@ import './MoviesCardList.css';
 
 import MoviesCard from '../MoviesCard/MoviesCard';
 
-import { movies } from '../../utils/initialMovies';
-
-const MoviesCardList = ({ onSaveMovie, onDeleteMovie }) => {
+const MoviesCardList = ({ movies, savedMovies, onSaveMovie, handleMore, restOfMovieList }) => {
     const location = useLocation();
 
     return (
         <section className='section__block section__block_type_movies'>
             <div className='movies__container'>
                 <ul className='movies__cards'>
-                    {movies.map((movie, index) => (
+                    {movies.map((movie) => (
                         <MoviesCard
-                            key={index}
+                            key={movie.movieId || movie.id}
                             movie={movie}
+                            savedMovies={savedMovies}
                             isSavedMoviesPage={location.pathname === '/saved-movies'}
                             onSaveMovie={onSaveMovie}
-                            onDeleteMovie={onDeleteMovie}
                         />
                     ))}
                 </ul>
-                <button className='movies__button'>Ещё</button>
+                {location.pathname !== '/saved-movies' && restOfMovieList.length > 0 && (<button className='movies__button' onClick={handleMore}>Ещё</button>)}
             </div>
         </section>
     );
